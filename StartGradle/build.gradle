@@ -19,17 +19,19 @@ dependencies {
     // https://mvnrepository.com/artifact/com.google.guava/guava
     implementation 'com.google.guava:guava:33.4.0-jre'
 
+    // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
+    implementation 'org.xerial:sqlite-jdbc:3.49.1.0'
 
 }
 
 application {
-    mainClass='ComputerShopMain'
+    mainClass= 'MainBD'
 }
 
 jar{
     duplicatesStrategy=DuplicatesStrategy.EXCLUDE
     manifest{
-        attributes('Main-Class':'ComputerShopMain')
+        attributes('Main-Class':'MainBD')
     }
     from{
         configurations.runtimeClasspath.collect{it.isDirectory()? it : zipTree(it)}
